@@ -12,5 +12,18 @@
     <header> 
         <h1> Bienvenu dans la biblioteque de l'ecole</h1>
     </header>
+    <div class="container">
+            <div class="category-grid">
+                {% for category in categories %}
+                    <div class="category">
+                        <h2>{{ category.name }}</h2>
+                        <p>{{ category.description }}</p>
+                    </div>
+                {% endfor %}
+            </div> 
+    </div>
 
+    
+</body>
+</html>
     
