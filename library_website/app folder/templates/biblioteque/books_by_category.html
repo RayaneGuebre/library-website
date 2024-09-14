@@ -1,0 +1,23 @@
+<!-- books_by_category.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }} Books</title>
+</head>
+<body>
+    <h1>Books in {{ category.name }}</h1>
+    <ul>
+        {% for book in books %}
+            <li class="book-item">
+            <span class="book-title"> {{ book.name }} </span> 
+            by 
+            <span class="book-author">{{ book.author }}</span>
+             <span> {{book.state}} </span> 
+            </li>
+        {% empty %}
+            <li>No books available in this category.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'category_list' %}">Back to Categories</a>
+</body>
+</html>

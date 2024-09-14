@@ -11,9 +11,10 @@ class Category( models.Model):
     
 
 class book(models.Model):
-    name = models.CharField(max_lenght=255)
+    name = models.CharField(max_lenght=255, unique=True)
     author = models.chaarField(max_lenght=255)
     publication_date = models.DateField()
+    available = models.BooleanField(default=True)
     isbn= models.CharField(max_lenght=255, unique=True)
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
     cover_image = models.ImageField(upload_to='covers/')                                        

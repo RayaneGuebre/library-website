@@ -15,15 +15,16 @@
     <div class="container">
             <div class="category-grid">
                 {% for category in categories %}
-                    <div class="category">
-                        <h2>{{ category.name }}</h2>
-                        <p>{{ category.description }}</p>
-                    </div>
+                <li>
+                    <a href="{% url 'books_by_category' category.id %}">
+                        <button>{{ category.name }}</button>
+                    </a>
+                </li>
                 {% endfor %}
             </div> 
     </div>
 
-    
+
 </body>
 </html>
     
