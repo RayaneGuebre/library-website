@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <link rel="stylesheet" href="{% static 'biblioteque/styles.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'app_folder/static/style.css' %}">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
             <div class="category-grid">
                 {% for category in categories %}
                 <li>
-                    <a href="{% url 'books_by_category' category.id %}">
+                    <a href="{% url 'books_in_category' category.name %}">
                         <button>{{ category.name }}</button>
                     </a>
                 </li>
