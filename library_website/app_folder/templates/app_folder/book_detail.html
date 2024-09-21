@@ -1,11 +1,11 @@
-<!-- book_details.html -->
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ book.name }}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{%static 'app_folder/static/style.css'%}">
 </head>
 <body>
     <div class="book_container">
@@ -14,6 +14,7 @@
             <img src="images/book-cover" alt="Cover">
             {% else %}
             <p>No cover Image Available</p>
+            {% endif %}
         </div>
         <div class="book-info">
         <h1>{{ book.name }}</h1>

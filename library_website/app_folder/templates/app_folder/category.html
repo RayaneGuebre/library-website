@@ -2,18 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ category.name }} Books</title>
+    <title>{{ category.name }}</title>
 </head>
 <body>
-    <h1>Books in {{ category.name }}</h1>
+    <h1> {{ category.name }}</h1>
     <ul>
         {% for book in books %}
+        <a href="{% url 'book_detail' category.name book.slug %}">
+
             <li class="book-item">
-            <span class="book-title"> {{ book.name }} </span> 
+            <span class="book-title"> {{ book.slug }} </span> 
             by 
             <span class="book-author">{{ book.author }}</span>
              <span> {{book.state}} </span> 
             </li>
+            
+        </a>
         {% empty %}
             <li>No books available in this category.</li>
         {% endfor %}

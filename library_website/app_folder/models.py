@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -12,6 +13,7 @@ class Category( models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(unique=True, blank=True) 
     author = models.CharField(max_length=255)
     publication_date = models.DateField()
     available = models.BooleanField(default=True)
