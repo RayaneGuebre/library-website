@@ -1,0 +1,21 @@
+@font-face{
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+    font-weight: 400; /* Normal weight */
+}
+
+#welcome-text-container{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: #073929;
+    height: 500px;
+}
+
+#welcome-text {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+}
+

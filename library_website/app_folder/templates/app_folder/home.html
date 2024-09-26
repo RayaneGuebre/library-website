@@ -1,18 +1,22 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    {% load static %}
-    <link rel="stylesheet" href="{%static 'template/app_folder/static/style.css'%}">
+    <link rel="stylesheet" href="{%static 'app_folder/static/style.css'%}">
 </head>
 <body>
 
 
+
     <header> 
-        <h1> Bienvenu dans la biblioteque de l'ecole</h1>
+        <div id="welcome-text-container">
+            <div id="welcome-text">
+                <h1> Bienvenu dans la biblioteque de l'ecole</h1>
+            </div>
+        </div>
     </header>
     <div class="container">
             <div class="category-grid">
