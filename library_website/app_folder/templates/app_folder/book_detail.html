@@ -1,27 +1,27 @@
 {%load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ book.name }}</title>
-    <link rel="stylesheet" href="{%static 'style.css'%}">
-</head>
-<body>
+    <link rel="stylesheet" href="{%static 'style.css'%}" />
+  </head>
+  <body>
     <div class="book_container">
-        <div class="book-cover">
-            {% if book.cover_image %}
-            <img src="images/book-cover" alt="Cover">
-            {% else %}
-            <p>No cover Image Available</p>
-            {% endif %}
-        </div>
-        <div class="book-info">
+      <div class="book-cover">
+        {% if book.cover_image %}
+        <img src="images/book-cover" alt="Cover" />
+        {% else %}
+        <p>No cover Image Available</p>
+        {% endif %}
+      </div>
+      <div class="book-info">
         <h1>{{ book.name }}</h1>
         <p><strong>Author:</strong> {{ book.author }}</p>
         <p><strong>ISBN</strong> {{book.isbn}}</p>
         <p><strong>Description: </strong> {{ book.description }}</p>
-        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

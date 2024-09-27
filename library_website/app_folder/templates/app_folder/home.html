@@ -1,36 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-
-
-
-    <header> 
-        <div id="welcome-text-container">
-            <div id="welcome-text">
-                <h1> Bienvenu dans la biblioteque de l'ecole</h1>
-            </div>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div id="welcome-text-container">
+        <div id="welcome-text">
+          <h1>Bienvenu dans la biblioteque de l'ecole</h1>
         </div>
+      </div>
     </header>
-    <div class="container">
-            <div class="category-grid">
-                {% for category in categories %}
-                <li>
-                    <a href="{% url 'books_in_category' category.name %}">
-                        <button>{{ category.name }}</button>
-                    </a>
-                </li>
-                {% endfor %}
-            </div> 
-    </div>
 
+    <main>
+      <div id="categories-title">
+        <h1>Notre Catalogue</h1>
+      </div>
+      <div id="categories-container">
+        <div id="category-grid">
+          {% for category in categories %}
+          <a
+            href="{% url 'books_in_category' category.name %}"
+            class="category-link"
+          >
+            {{ category.name }}
+          </a>
 
-</body>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
-    
