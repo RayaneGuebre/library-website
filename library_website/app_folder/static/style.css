@@ -1,31 +1,58 @@
-@font-face{
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('/static/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-weight: 400; /* Normal weight */
 }
 
+.montserrat-MainFont {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+body, h1, h2, h3, p { 
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    padding:0;
+    margin: 0; 
+}
+@media (max-width: 768px) {
+    #category-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #category-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile phones */
+    }
+} 
 #welcome-text-container{
     display: flex;
     justify-content: center; 
     align-items: center;
     background-color: #073929;
-    height: 500px;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
 }
 
 #welcome-text {
     text-align: center;
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 60px;
     color: white;
 }
 
 #categories-title h1{
-    font-size: 1rem;
+    font-size: 96px;
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 75px;
+    padding-bottom: 50px;
     color: black;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 #categories-container {
@@ -34,4 +61,37 @@
     align-items: center; /* Center the content vertically */
     text-align: center;
     
+}
+
+#category-grid{
+    display:grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    grid-template-columns: 300px 300px  300px;
+    grid-template-rows: 80px 80px 80px;
+}
+#category-grid button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #073929;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 50px;
+    grid-template-columns: repeat(auto-fit, 200px, 1fr);
+}
+#categories-section {
+    height: 100vh;
+    background-color: #FBFCF8; 
+}
+
+.navbar {
+    height: 30vh;
+    background-color: #FBFCF8;
+}
+.site-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }

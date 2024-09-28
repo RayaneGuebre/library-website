@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
+      <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/DIC_logo" alt="Website Logo" class="logo">
+            <span class="site-title">Biblioteque DIC College</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
       <div id="welcome-text-container">
         <div id="welcome-text">
           <h1>Bienvenu dans la biblioteque de l'ecole</h1>
@@ -17,22 +35,23 @@
     </header>
 
     <main>
-      <div id="categories-title">
-        <h1>Notre Catalogue</h1>
-      </div>
-      <div id="categories-container">
-        <div id="category-grid">
-          {% for category in categories %}
-          <a
-            href="{% url 'books_in_category' category.name %}"
-            class="category-link"
-          >
-            {{ category.name }}
-          </a>
-
-          {% endfor %}
+      <section id="categories-section">
+        <div id="categories-title">
+          <h1>Notre Catalogue</h1>
         </div>
-      </div>
+        <div id="categories-container">
+          <div id="category-grid">
+            {% for category in categories %}
+            <a
+              href="{% url 'books_in_category' category.name %}"
+              class="category-button"
+              ><button>{{ category.name }}</button>
+            </a>
+
+            {% endfor %}
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
