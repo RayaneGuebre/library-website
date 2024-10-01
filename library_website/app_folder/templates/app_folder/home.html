@@ -19,17 +19,18 @@
         <div id="nav-container">
           <div id="nav-left">
             <div class="logo-container">
-              <img src="images/DIC_logo.png" alt="Website Logo" class="logo" />
+              <img
+                src="{% static 'images/DIC_logo.png' %}"
+                alt="Website Logo"
+                id="logo"
+              />
+            </div>
+            <span id="nav-title">Biblioteque DIC College</span>
           </div>
-              <span class="site-title">Biblioteque DIC College</span>
-            
-          </div>
-          <div id="nav-rigth">
-          
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          
+          <div id="nav-right">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
       </nav>

@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: url('/static/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400; /* Normal weight */
+  font-family: "Montserrat", sans-serif;
+  src: url("/static/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400; /* Normal weight */
 }
 :root {
-    --light-blue: #00b4cd;
+  --light-blue: #00b4cd;
 }
 .montserrat-MainFont {
   font-family: "Montserrat", sans-serif;
@@ -12,110 +12,127 @@
   font-weight: 400;
   font-style: normal;
 }
-body, h1, h2, h3, p { 
-    font-family: 'Montserrat', sans-serif;
+body,
+h1,
+h2,
+h3,
+p {
+  font-family: "Montserrat", sans-serif;
 }
 body {
-    padding:0;
-    margin: 0; 
+  padding: 0;
+  margin: 0;
 }
 @media (max-width: 768px) {
-    #category-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
+  #category-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
 }
 
 @media (max-width: 480px) {
-    #category-grid {
-        grid-template-columns: 1fr; /* 1 column for mobile phones */
-    }
-} 
-#welcome-text-container{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    background-color: #073929;
-    height: 100vh;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
+  #category-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile phones */
+  }
+}
+#welcome-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #073929;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 #welcome-text {
-    text-align: center;
-    font-weight: 600;
-    font-size: 60px;
-    color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 60px;
+  color: white;
 }
 
-#categories-title h1{
-    font-size: 96px;
-    text-align: center;
-    padding-top: 75px;
-    padding-bottom: 50px;
-    color: black;
-    font-weight: 600;
+#categories-title h1 {
+  font-size: 96px;
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 50px;
+  color: black;
+  font-weight: 600;
 }
 
 #categories-container {
-    display: flex;
-    justify-content: center; /* Center the container horizontally */
-    align-items: center; /* Center the content vertically */
-    text-align: center;
-    
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center;
 }
 
-#category-grid{
-    display:grid;
-    column-gap: 50px;
-    row-gap: 50px;
-    grid-template-columns: 300px 300px  300px;
-    grid-template-rows: 80px 80px 80px;
+#category-grid {
+  display: grid;
+  column-gap: 50px;
+  row-gap: 50px;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 80px 80px 80px;
 }
-#category-grid button{
-    width: 100%;
-    height: 100%;
-    color: white;
-    background-color: var(--light-blue);
-    font-size: 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 50px;
-    grid-template-columns: repeat(auto-fit, 200px, 1fr);
+#category-grid button {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: var(--light-blue);
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 50px;
+  grid-template-columns: repeat(auto-fit, 200px, 1fr);
 }
 #categories-section {
-    height: 100vh;
-    background-color: #FBFCF8; 
+  height: 100vh;
+  background-color: #fbfcf8;
 }
 
 #navbar-container {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
-    align-items: center;
-    
-    background-color: #FBFCF8;
-    height: 80px;
-  }
+  display: grid;
+  grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fbfcf8;
+  height: 80px;
+}
+
+
+#nav-right {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#nav-left {
+  align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+#nav-title {
+  font-size: 20px;
+  color: black;
+  font-weight: 600 ;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 20px;
+}
+
+#logo {
+  padding-left: 20px;
+  margin-right: 10px;
+  width: 60px;
+  height: auto;
   
-.site-title {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+
 }
-#nav-right{
-    display: flex;
-    justify-content: flex-end;
-}
-#nav-left{
-    display: flex;
-    align-items: center
-}
-#nav-title{
-    font-size: 20px;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-}
-#logo{
-    height: 50px;
-    width: 50px;
+
+#nav-right a {
+  color: black;  
+  margin-left: 20px; /* Add space between links */
+  text-decoration: none;
+  font-size: 16px;
 }
