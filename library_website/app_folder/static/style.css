@@ -5,6 +5,7 @@
 }
 :root {
   --light-blue: #00b4cd;
+  --green: #073929;
 }
 .montserrat-MainFont {
   font-family: "Montserrat", sans-serif;
@@ -79,7 +80,7 @@ body {
   width: 100%;
   height: 100%;
   color: white;
-  background-color: var(--light-blue);
+  background-color: var(--green);
   font-size: 30px;
   border: none;
   border-radius: 10px;
@@ -92,12 +93,18 @@ body {
 }
 
 #navbar-container {
-  display: grid;
+  display: flex;
   grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
+  grid-template-rows: 80px;
   align-items: center;
   padding: 0 20px;
   background-color: #fbfcf8;
-  height: 80px;
+  height: 100px;
+  
+}
+#navbar-container div {
+  float: left;
+  clear: none; 
 }
 
 
@@ -105,16 +112,23 @@ body {
   align-items: center;
   display: flex;
   justify-content: flex-end;
+  padding-left: 20px;
 }
 
 #nav-left {
+  padding-left: 50px;
   align-items: center;
   display: flex;
   align-items: center;
+  align-content: center;
+  float: left;
+  text-align: center;
+  width: 50%;
 }
 
 #nav-title {
-  font-size: 20px;
+  padding-top: 10px;
+  font-size: 25px;
   color: black;
   font-weight: 600 ;
   font-family: "Montserrat", sans-serif;
@@ -124,15 +138,17 @@ body {
 #logo {
   padding-left: 20px;
   margin-right: 10px;
-  width: 60px;
+  width: 80px;
   height: auto;
+  padding-top: 20px;
   
 
 }
 
 #nav-right a {
   color: black;  
-  margin-left: 20px; /* Add space between links */
+  margin-left: 20px; 
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
 }
