@@ -4,7 +4,7 @@
   font-weight: 400; /* Normal weight */
 }
 :root {
-  --light-blue: #00b4cd;
+  --light-blue: #00b0c7;
   --green: #073929;
 }
 .montserrat-MainFont {
@@ -56,7 +56,7 @@ body {
 #categories-title h1 {
   font-size: 96px;
   text-align: center;
-  padding-top: 75px;
+  padding-top: 90px;
   padding-bottom: 50px;
   color: black;
   font-weight: 600;
@@ -72,7 +72,7 @@ body {
 #category-grid {
   display: grid;
   column-gap: 50px;
-  row-gap: 50px;
+  row-gap: 60px;
   grid-template-columns: 300px 300px 300px 300px;
   grid-template-rows: 80px 80px 80px 80px;
 }
@@ -80,7 +80,7 @@ body {
   width: 100%;
   height: 100%;
   color: white;
-  background-color: var(--light-blue);
+  background-color: var(--green);
   font-weight: 400;
   border: none;
   border-radius: 10px;
@@ -97,7 +97,7 @@ body {
   grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
   grid-template-rows: 80px;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 0px;
   background-color: #fbfcf8;
   height: 100px;
 }
@@ -108,6 +108,7 @@ body {
   display: flex;
   justify-content: flex-end;
   padding-left: 20px;
+  padding-right: 0;
 }
 
 #nav-left {
@@ -125,7 +126,7 @@ body {
   padding-top: 10px;
   font-size: 25px;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   padding-left: 20px;
 }
@@ -133,7 +134,7 @@ body {
 #logo {
   padding-left: 20px;
   margin-right: 10px;
-  width: 70px;
+  width: 50px;
   height: auto;
   padding-top: 20px;
 }
@@ -146,5 +147,6 @@ body {
   font-weight: 600;
   align-items: center;
   align-self: center;
-  padding: 20 20; 
+  padding-top: 20px; 
+
 }
