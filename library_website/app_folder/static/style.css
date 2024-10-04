@@ -7,6 +7,14 @@
   --light-blue: #00b0c7;
   --green: #073929;
 }
+
+
+.inter-burron_font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .montserrat-MainFont {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -46,20 +54,22 @@ body {
   margin: 0;
 }
 
+
 #welcome-text {
+  padding-top: 30px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 60px;
   color: white;
 }
 
 #categories-title h1 {
-  font-size: 96px;
+  font-size: 70px;
   text-align: center;
   padding-top: 90px;
   padding-bottom: 50px;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #categories-container {
@@ -77,6 +87,7 @@ body {
   grid-template-rows: 80px 80px 80px 80px;
 }
 #category-grid button {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   height: 100%;
   color: white;
@@ -134,7 +145,7 @@ body {
 #logo {
   padding-left: 20px;
   margin-right: 10px;
-  width: 50px;
+  width: 40px;
   height: auto;
   padding-top: 20px;
 }
@@ -149,4 +160,32 @@ body {
   align-self: center;
   padding-top: 20px; 
 
+}
+#category-name-text{
+  width: 100vw;
+  height: 497px;
+  display: block;
+  background-color: var(--light-blue);
+
+}
+#category-name-text  h1{
+  font-size: 96px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 20px;
+  color: white;
+} 
+#books-container {
+  display: grid;
+  grid-template-columns: 269px 269px 269px;
+  grid-template-columns: 483px 483px 483px;
+}
+.book-item img {
+    height: 400px;
+    width: auto;
+}
+.book-item h1 {
+  font-size: 15px;
+  text-align: center;
 }

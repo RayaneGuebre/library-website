@@ -1,29 +1,38 @@
 <!-- books_by_category.html -->
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>{{ category.name }}</title>
-    <link rel="styleheet" href="{% static 'style.css' %}" >
-</head>
-<body>
-    <h1> {{ category.name }}</h1>
-    <ul>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div id="category-name-text">
+      <h1>{{ category.name }}</h1>
+    </div>
+    <div id="books-container">
+      <ul>
         {% for book in books %}
-        <a href="{% url 'book_detail' category.name book.slug %}">
+        <div id="book-container">
+          <a href="{% url 'book_detail' category.name book.slug %}">
+            <div class="book-item">
+              <img src="{{book.cover_image}}"" alt="{{ book.name }} cover
+              image">
+              <span class="book-title"> {{ book.slug }} </span>
+              by
+              <span class="book-author">{{ book.author }}</span>
+              <span> {{book.state}} </span>
+            </div>
+          </a>
+        </div>
 
-            <li class="book-item">
-            <span class="book-title"> {{ book.slug }} </span> 
-            by 
-            <span class="book-author">{{ book.author }}</span>
-             <span> {{book.state}} </span> 
-            </li>
-            
-        </a>
         {% empty %}
-            <li>No books available in this category.</li>
+        <li>No books available in this category.</li>
         {% endfor %}
-    </ul>
-    <a href="{% url 'category_list' %}">Back to Categories</a>
-</body>
+      </ul>
+    </div>
+    <div id="back-button">
+      <a href="{% url 'category_list' %}">Back to Homepage</a>
+    </div>
+  </body>
 </html>
