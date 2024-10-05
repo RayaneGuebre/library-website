@@ -163,8 +163,9 @@ body {
 }
 #category-name-text{
   width: 100vw;
-  height: 497px;
-  display: block;
+  height: 244px;
+  display: flex;
+  padding-top: 0px;
   background-color: var(--light-blue);
 
 }
@@ -183,9 +184,49 @@ body {
 }
 .book-item img {
     height: 400px;
-    width: auto;
+    width: auto; 
 }
 .book-item h1 {
   font-size: 15px;
   text-align: center;
+}
+.no-books-text{
+  padding-top: 50px;
+  display: flex;
+  margin-left: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.no-books-text h2{
+  font-weight: 400;
+  text-align: center;
+  font-size: 35px;
+  
+
+
+
+}
+.back-button-container{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.back-button {
+  align-items: center;
+  justify-content: center;
+
+  display: inline-block;
+  width: 150px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
+  background-color: var(--light-blue); /* Adjust color as needed */
+  color: white;
+  text-align: center;
+  line-height: 50px; /* This centers the text vertically */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
 }

@@ -3,36 +3,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ category.name }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      href="https://www.dic-college.be/wp-content/uploads/fav-DIC.png"
+      sizes="32x32"
+    />
+    <title>{{ category.name }} - Biblioteque - DIC</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    <div id="category-name-text">
-      <h1>{{ category.name }}</h1>
-    </div>
+    <header>
+      <div id="category-name-text">
+        <h1>{{ category.name }}</h1>
+      </div>
+    </header>
     <div id="books-container">
-      <ul>
-        {% for book in books %}
-        <div id="book-container">
-          <a href="{% url 'book_detail' category.name book.slug %}">
-            <div class="book-item">
-              <img src="{{book.cover_image}}"" alt="{{ book.name }} cover
-              image">
-              <span class="book-title"> {{ book.slug }} </span>
-              by
-              <span class="book-author">{{ book.author }}</span>
-              <span> {{book.state}} </span>
-            </div>
-          </a>
-        </div>
+      {% for book in books %}
+      <div id="book-container">
+        <a href="{% url 'book_detail' category.name book.slug %}">
+          <div class="book-item">
+            <img src="{{book.cover_image}}"" alt="{{ book.name }} cover image">
+            <span class="book-title"> {{ book.slug }} </span>
+            by
+            <span class="book-author">{{ book.author }}</span>
+            <span> {{book.state}} </span>
+          </div>
+        </a>
+      </div>
 
-        {% empty %}
-        <li>No books available in this category.</li>
-        {% endfor %}
-      </ul>
+      {% empty %}
+      <div class="no-books-text">
+        <h2>No books available in this category.</h2>
+      </div>
+      {% endfor %}
     </div>
-    <div id="back-button">
-      <a href="{% url 'category_list' %}">Back to Homepage</a>
+    <div class="back-button-container">
+      <a href="{% url 'category_list' %}" class="back-button">Back to Homepage</a>
     </div>
   </body>
 </html>
