@@ -7,7 +7,10 @@
   --light-blue: #00b0c7;
   --green: #073929;
 }
-
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 5rem
+}
 
 .inter-burron_font {
   font-family: "Inter", sans-serif;
@@ -103,7 +106,7 @@ body {
   background-color: #fbfcf8;
 }
 
-#navbar {
+.navbar {
   display: flex;
   grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
   grid-template-rows: 80px;
@@ -114,7 +117,7 @@ body {
 }
 
 
-#nav-right {
+.nav-right {
   align-items: center;
   display: flex;
   justify-content: flex-end;
@@ -122,7 +125,7 @@ body {
   padding-right: 0;
 }
 
-#nav-left {
+.nav-left {
   padding-left: 50px;
   align-items: center;
   display: flex;
@@ -133,7 +136,7 @@ body {
   width: 50%;
 }
 
-#nav-title {
+.nav-title {
   padding-top: 10px;
   font-size: 25px;
   color: black;
@@ -142,7 +145,7 @@ body {
   padding-left: 20px;
 }
 
-#logo {
+.logo {
   padding-left: 20px;
   margin-right: 10px;
   width: 40px;
@@ -150,7 +153,7 @@ body {
   padding-top: 20px;
 }
 
-#nav-right a {
+.nav-right a {
   color: black;
   margin-left: 20px;
   text-decoration: none;
@@ -229,4 +232,22 @@ body {
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
+}
+.books-container{
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-rows: 450px 450px 450px 450px;
+  column-gap: 1fr;
+  row-gap: 30px;
+}
+.book-card-container{
+  width: 250px;
+  height: 450px;
+  border-radius: 10px;
+}
+.book-card-image{
+  align-self: center;
+  height:  380px;
+  width: 180px;
+  border-radius: 5px;
 }

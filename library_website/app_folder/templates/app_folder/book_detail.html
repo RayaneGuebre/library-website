@@ -9,14 +9,39 @@
     <link rel="icon" href="https://www.dic-college.be/wp-content/uploads/fav-DIC.png" sizes="32x32">
   </head>
   <body>
-    <div class="book_container">
+    <header>
+      <nav class="navbar">
+        
+        <div class="nav-left">
+          <div class="logo-container">
+            <img
+              src="{% static 'images/DIC_logo.png' %}"
+              alt="Website Logo"
+              class="logo"
+            />
+          </div>
+          <span class="nav-title">Biblioteque DIC College</span>
+        </div>
+        <div class="nav-right">
+          <a href="#categories-section">Categories</a>
+          <a href="#info">Info</a>
+          <a href="#contact">Contact</a>
+        </div>
+     
+    </nav>
+
+    </header>
+    <div class="book-container">
+      <figure id="book.cover.container">
       <div class="book-cover">
         {% if book.cover_image %}
-        <img src="{{book.cover_image}} alt="Cover" />
+        <img src="{{book.cover_image.url}} alt="Cover" />
         {% else %}
         <p>No cover Image Available</p>
         {% endif %}
       </div>
+      </figure>
+
       <div class="book-info">
         <h1>{{ book.name }}</h1>
         <p><strong>Author:</strong> {{ book.author }}</p>

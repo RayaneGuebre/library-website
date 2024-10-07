@@ -1,9 +1,15 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Route to the admin interface
     path('', include('app_folder.urls')),
- # Route to the biblioteque app's URLs
 ]
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

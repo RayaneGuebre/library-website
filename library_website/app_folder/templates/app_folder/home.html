@@ -19,19 +19,19 @@
   </head>
   <body>
     <header>
-      <nav id="navbar">
+      <nav class="navbar">
         
-          <div id="nav-left">
+          <div class="nav-left">
             <div class="logo-container">
               <img
                 src="{% static 'images/DIC_logo.png' %}"
                 alt="Website Logo"
-                id="logo"
+                class="logo"
               />
             </div>
-            <span id="nav-title">Biblioteque DIC College</span>
+            <span class="nav-title">Biblioteque DIC College</span>
           </div>
-          <div id="nav-right">
+          <div class="nav-right">
             <a href="#categories-section">Categories</a>
             <a href="#info">Info</a>
             <a href="#contact">Contact</a>
@@ -59,7 +59,7 @@
               class="category-button"
               ><button>{{ category.name }}</button>
             </a>
-
+            
             {% endfor %}
           </div>
         </div>

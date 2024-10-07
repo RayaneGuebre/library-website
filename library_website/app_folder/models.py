@@ -19,4 +19,4 @@ class Book(models.Model):
     available = models.BooleanField(default=True)
     isbn= models.CharField(max_length=255, unique=True)
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
-    cover_image = models.ImageField(upload_to='covers/')                                        
+    cover = models.ImageField(upload_to='covers/')                                        

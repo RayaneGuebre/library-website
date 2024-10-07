@@ -21,21 +21,44 @@
   </head>
   <body>
     <header>
+      <nav class="navbar">
+        
+        <div class="nav-left">
+          <div class="logo-container">
+            <img
+              src="{% static 'images/DIC_logo.png' %}"
+              alt="Website Logo"
+              class="logo"
+            />
+          </div>
+          <span class="nav-title">Biblioteque DIC College</span>
+        </div>
+        <div class="nav-right">
+          <a href="#categories-section">Categories</a>
+          <a href="#info">Info</a>
+          <a href="#contact">Contact</a>
+        </div>
+     
+    </nav>
       <div id="category-name-text">
         <h1>{{ category.name }}</h1>
       </div>
     </header>
-    <div id="books-container">
+    <section class="books-container">
       {% for book in books %}
-      <div id="book-container">
+      <div class="book-card-container">
         <a href="{% url 'book_detail' category.name book.slug %}">
-          <div class="book-item">
-            <img src="{{book.cover_image}}"" alt="{{ book.name }} cover image">
-            <span class="book-title"> {{ book.slug }} </span>
-            by
-            <span class="book-author">{{ book.author }}</span>
-            <span> {{book.state}} </span>
+          <div class="book-card">
+            
+                  <img class="book-card-img" src="{{book.cover.url}}"  alt="{{book.name}} cover image"/>
+              <div class="book-card-title">
+                  {{book.name}}
+              </div>
+              <div class="book-card-author">
+                {{book.author}}
+              </div>
           </div>
+
         </a>
       </div>
 
@@ -44,7 +67,7 @@
         <h2>No books available in this category.</h2>
       </div>
       {% endfor %}
-    </div>
+    </section>
     <div class="back-button-container">
       <a href="{% url 'category_list' %}" class="back-button">Back to Homepage</a>
     </div>
