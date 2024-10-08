@@ -239,8 +239,13 @@ body {
   grid-template-rows: 450px 450px 450px 450px;
   column-gap: 1fr;
   row-gap: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+
 }
 .book-card-container{
+  box-shadow: black 5px;
   width: 250px;
   height: 450px;
   border-radius: 10px;
@@ -250,4 +255,16 @@ body {
   height:  380px;
   width: 180px;
   border-radius: 5px;
+}
+book-card-title{
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 56px;
+  padding-left: 10px;
+}
+.book-card-author{
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 40px;
+  padding-left: 10px;
 }
