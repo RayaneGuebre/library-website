@@ -125,6 +125,7 @@ body {
   padding-right: 0;
 }
 
+
 .nav-left {
   padding-left: 50px;
   align-items: center;
@@ -162,6 +163,12 @@ body {
   align-items: center;
   align-self: center;
   padding-top: 20px; 
+
+
+}
+
+.nav-right:hover a {
+  text-shadow: black 4px;
 
 }
 #category-name-text{
@@ -286,3 +293,19 @@ body {
 .book-card-container:hover .book-card-img{
   transform: scale(1.1)
 }
+.book-container{
+  display: flex;
+  padding-top: 40px;
+}
+.book-info h1{
+  padding-left: 500px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #191919
+}
+.book-info p{
+  font-size: 30px;
+  font-weight: 400px;
+  text-align: left;
+}
+

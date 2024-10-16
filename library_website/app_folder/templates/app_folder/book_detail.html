@@ -35,7 +35,7 @@
       <figure id="book.cover.container">
       <div class="book-cover">
         {% if book.cover_image %}
-        <img src="{{book.cover_image.url}} alt="Cover" />
+        <img src="{{book.cover.url}} alt="{{book cover image}} Cover" />
         {% else %}
         <p>No cover Image Available</p>
         {% endif %}
