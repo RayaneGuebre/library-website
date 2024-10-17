@@ -34,8 +34,8 @@
     <div class="book-container">
       <figure id="book-cover-container">
       <div class="book-cover">
-        {% if book.cover_image %}
-        <img src="{{book.cover.url}}"alt="{{book.name}} cover image Cover">
+        {% if book.cover %}
+        <img src="{{ book.cover.url }}"alt="{{book.name}} cover image Cover">
         {% else %}
         <p>No cover Image Available</p>
         {% endif %}
@@ -44,6 +44,16 @@
 
       <div class="book-info">
         <h1>{{ book.name }}</h1>
+        <div class="book-status">
+          <span class="status-dot {% if book.is_available %}available{% else %}unavailable{% endif %}"></span>
+          <span class="status-text">
+              {% if book.is_available %}
+                  Available
+              {% else %}
+                  Unavailable
+              {% endif %}
+          </span>
+      </div>
         <p><strong>Author:</strong> {{ book.author }}</p>
         <p><strong>ISBN:</strong> {{book.isbn}}</p>
         <p><strong>Description: </strong> {{ book.description }}</p>

@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import Category, Book
 
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('name', 'author', 'isbn', 'is_available')
+
+admin.site.register(Book, BookAdmin)
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)  # Display these fields in the list view

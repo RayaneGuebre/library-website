@@ -16,7 +16,7 @@ class Book(models.Model):
     slug = models.SlugField(unique=True, blank=True) 
     author = models.CharField(max_length=255)
     publication_date = models.DateField()
-    available = models.BooleanField(default=True)
+    is_available = models.BooleanField(default=True)
     isbn= models.CharField(max_length=255, unique=True)
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
     cover = models.ImageField(upload_to='covers/')                                        
