@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+    href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+    rel="stylesheet"
+  />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
@@ -26,7 +30,6 @@
   <body>
     <header>
       <nav class="navbar">
-        
         <div class="nav-left">
           <div class="logo-container">
             <img
@@ -42,38 +45,27 @@
           <a href="#info">Info</a>
           <a href="#contact">Contact</a>
         </div>
-     
-    </nav>
+      </nav>
       <div id="category-name-text">
         <h1>{{ category.name }}</h1>
       </div>
     </header>
     <section class="books-container">
-      {% for book in books %}
-      <div class="book-card-container">
-        <a href="{% url 'book_detail' category.name book.slug %}">
-          <div class="book-card">
+      <a href=""
+          <div class="v5_30">
+            <div class="v5_32"></div>
+            <span class="v5_31">Fantasy</span>
+            {% for book in books}
             
-                  <img class="book-card-img" src="{{book.cover.url}}"  alt="{{book.name}} cover image"/>
-              <div class="book-card-title">
-                  {{book.name}}
-              </div>
-              <div class="book-card-author">
-                {{book.author}}
-              </div>
+            <div class="categories-books-name"></div>
+            {% empty%}
+            <div class="no-books-text">
+              <h2>no books available</h2>
+            </div>
+            {% endfor %}
+            
           </div>
-
-        </a>
-      </div>
-
-      {% empty %}
-      <div class="no-books-text">
-        <h2>No books available in this category.</h2>
-      </div>
-      {% endfor %}
+       
     </section>
-    <div class="back-button-container">
-      <a href="{% url 'category_list' %}" class="back-button">Back to Homepage</a>
-    </div>
   </body>
 </html>
