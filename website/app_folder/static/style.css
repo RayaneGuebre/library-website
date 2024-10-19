@@ -313,6 +313,7 @@ body {
 }
 
 .book-cover img{
+  width: 700px;
   max-width: 100%;  /* Occupa tutta la colonna dedicata */
   height: auto;
   object-fit: cover;
