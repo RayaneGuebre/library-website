@@ -276,6 +276,12 @@ body {
   color: black;
   font-family: "Montserrat", sans-serif;
 }
+.book-card-author a{
+  text-decoration: none;
+}
+.book-card-title a{
+  text-decoration: none;
+}
 
 .book-card-container:hover .book-card-img {
   transform: scale(1.1);
@@ -350,4 +356,21 @@ body {
 }
 .categories-books-name {
   color: #fff;
+}
+.book-card-container a {
+  text-decoration: none;
+  color: inherit;
+}
+.book-card-title a,
+.book-card-title a:link, 
+.book-card-title a:visited, 
+.book-card-title a:hover, 
+.book-card-title a:active,
+.book-card-author a,
+.book-card-author a:link, 
+.book-card-author a:visited, 
+.book-card-author a:hover, 
+.book-card-author a:active {
+  text-decoration: none;
+  color: black; /* Ensure links are always black */
 }
