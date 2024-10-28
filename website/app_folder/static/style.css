@@ -350,7 +350,7 @@ body {
   color: black; /* Ensure links are always black */
 }
 
-.popular-books-text {
+.popular-books-text h1{
   font-size: 70px;
   text-align: center;
   padding-top: 90px;
