@@ -4,11 +4,8 @@ from .models import Category, Book, FeaturedBooks
 
 
 def home(request):
-     categories = Category.objects.all()
-    
-   
+    categories = Category.objects.all()
     specific_books = Book.objects.filter(name__in=["The Lord of the Rings", "Harry Potter", "Wonder"])
-
     return render(request, 'app_folder/home.html', {
         'categories': categories,
         'specific_books': specific_books})
