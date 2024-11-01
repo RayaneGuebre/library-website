@@ -46,7 +46,7 @@
         <div class="featured-books-container">
           
           {% for book in specific_books %}
-          <a href="{% url 'book_detail' category.name book.slug %}">
+          <a href="{% url 'book_detail' book.category.name book.slug %}">
           <div class="book-card">
             <img src="{{ book.cover.url }}" alt="{{ book.name }} cover image">
             <h2>{{ book.name }}</h2>

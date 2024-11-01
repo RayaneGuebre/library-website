@@ -18,8 +18,9 @@ def books_in_category(request, category_name):
 def book_detail(request, book_slug, category_name):
     category = get_object_or_404(Category, name=category_name)
     book = get_object_or_404(Book, slug=book_slug)
-    return render(request, 'app_folder/book_detail.html', {'book': book})
-from .models import FeaturedBooks
+    cover_url = f"http://covers.openlibrary.org/b/isbn{book.isbn}-L.jpg"
+    return render(request, 'app_folder/book_detail.html', {'book': book,'cover_url' : cover_url})
+
 
 def homepage_view(request):
     featured_books = FeaturedBooks.objects.order_by('order')[:3]  # Adjust this to show only 3 books
