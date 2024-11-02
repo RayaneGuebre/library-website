@@ -26,4 +26,3 @@ def homepage_view(request):
     featured_books = FeaturedBooks.objects.order_by('order')[:3]  # Adjust this to show only 3 books
     context = {'featured_books': featured_books}
     return render(request, 'homepage.html', context)
-1

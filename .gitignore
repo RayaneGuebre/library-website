@@ -1,0 +1,4 @@
+.env
+myenv/
+__pychache__/*.__pyc
+*.sqlite3
