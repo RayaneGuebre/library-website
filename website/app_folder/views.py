@@ -16,6 +16,7 @@ def home(request):
 def books_in_category(request, category_name):
     category = get_object_or_404(Category, name=category_name)
     books = category.books.all()  
+    books_with_cover = []
     for book in books:
         isbn = book.isbn
         api_key = os.getenv("GOOGLE_BOOKS_API_KEY")
@@ -29,14 +30,14 @@ def books_in_category(request, category_name):
             if "items" in data:
                 cover_url = data["items"][0]["volumeInfo"].get("imageLinks", {}).get("thumbnail")
                 if cover_url:
-                    cover_url = cover_url.replace("zoom=1", "zoom=2").replace("zoom=2", "zoom=3")
+                    cover_url = cover_url.replace("zoom=1", "zoom=2").replace("zoom=2", "zoom=3") 
+                books_with_cover.append({'book': book, 'cover_url': cover_url})
         else: 
             print("Failed to find the cover")
-    return render(request, 'app_folder/category.html', {'category': category, 'books': books})
+    return render(request, 'app_folder/category.html', {'category': category, 'books_with_cover' : books_with_cover})
 
 
 def book_detail(request, book_slug, category_name):
-    
     category = get_object_or_404(Category, name=category_name)
     book = get_object_or_404(Book, slug=book_slug)
     isbn = book.isbn

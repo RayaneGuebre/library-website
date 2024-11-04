@@ -21,7 +21,6 @@
   <body>
     <header>
       <nav class="navbar">
-        
         <div class="nav-left">
           <div class="logo-container">
             <img
@@ -37,25 +36,27 @@
           <a href="#info">Info</a>
           <a href="#contact">Contact</a>
         </div>
-     
-    </nav>
+      </nav>
       <div id="category-name-text">
         <h1>{{ category.name }}</h1>
       </div>
     </header>
     <section class="books-container">
-      {% for book in books %}
+      {% for book in books_with_cover %}
       <div class="book-card-container">
         <a href="{% url 'book_detail' category.name book.slug %}">
           <div class="book-card">
-            
-                  <img class="book-card-img" src="{{cover_url}}"  alt="{{book.name}} cover image"/>
-              <div class="book-card-title">
-                  {{book.name}}
-              </div>
-              
+          {% if boooks.cover_url %}
+            <img
+              class="book-card-img"
+              src="{{book.cover_url}}"
+              alt="{{book.book.name}} cover image"
+            />
+            {% else %}
+            <p>No cover Books available</p>
+            {% endif %}
+            <div class="book-card-title">{{book.book.name}}</div>
           </div>
-
         </a>
       </div>
 
@@ -66,7 +67,9 @@
       {% endfor %}
     </section>
     <div class="back-button-container">
-      <a href="{% url 'category_list' %}" class="back-button">Back to Homepage</a>
+      <a href="{% url 'category_list' %}" class="back-button"
+        >Back to Homepage</a
+      >
     </div>
   </body>
 </html>
