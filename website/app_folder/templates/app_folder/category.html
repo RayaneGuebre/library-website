@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,8 +17,7 @@
       href="https://www.dic-college.be/wp-content/uploads/fav-DIC.png"
       sizes="32x32"
     />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
     <title>{{ category.name }} - Biblioteque - DIC</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
@@ -48,7 +49,7 @@
       <div class="book-card-container">
         <a href="{% url 'book_detail' category.name book.slug %}">
           <div class="book-card">
-          {% if boooks.cover_url %}
+          {% if books.cover_url %}
             <img
               class="book-card-img"
               src="{{book.cover_url}}"
