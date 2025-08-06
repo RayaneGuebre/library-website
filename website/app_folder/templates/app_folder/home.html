@@ -2,17 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioteque - DIC Collège</title>
-    <link rel="icon" href="https://www.dic-college.be/wp-content/uploads/fav-DIC.png" sizes="32x32">
+    <link
+      rel="icon"
+      href="https://www.dic-college.be/wp-content/uploads/fav-DIC.png"
+      sizes="32x32"
+    />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -21,18 +26,21 @@
   <body>
     <header>
       <nav class="navbar">
-        
-        <div style="width: 100%; height: 100%; position: relative">
-          <div style="width: 100vw; height: 129px; left: 0px; top: 0px; position: absolute; background: white"></div>
-          <div style="width: 180px; height: 28px; left: 937px; top: 51px; position: absolute; text-align: center; color: #073929; font-size: 24px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Catalogue</div>
-          <div style="width: 180px; height: 28px; left: 1140px; top: 51px; position: absolute; text-align: center; color: #0F3328; font-size: 24px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Contacts</div>
-          <img style="width: 55.82px; height: 70px; left: 86px; top: 30px; position: absolute" src="https://via.placeholder.com/56x70" />
-      </div>
-       
+        <div class="nav-left">
+          <img
+            src="https://www.dic-college.be/wp-content/uploads/logo-DIC-College-1.png"
+            alt="DIC College Logo"
+            class="logo"
+          />
+          <span class="nav-title">Bibliothèque DIC Collège</span>
+        </div>
+        <div class="nav-right">
+          <a href="#categories-section">Catalogue</a>
+          <a href="#contact">Contacts</a>
+        </div>
       </nav>
 
       <div id="welcome-text-container">
-        
         <div id="welcome-text">
           <h1>Bienvenu</h1>
         </div>
@@ -40,26 +48,32 @@
     </header>
 
     <main>
-    <section id="popular-books-section">
+      <section id="popular-books-section">
         <div class="popular-books-text">
           <h1>Livres Populaires</h1>
         </div>
         <div class="featured-books-container">
-          
           {% for book in specific_books %}
           <a href="{% url 'book_detail' book.category.name book.slug %}">
-          <div class="book-card">
-            <img src="{{ book.cover.url }}" alt="{{ book.name }} cover image">
-            <h2>{{ book.name }}</h2>
-          </div>
+            <div class="book-card">
+              {% if book.cover %}
+              <img
+                src="{{ book.cover.url }}"
+                alt="{{ book.name }} cover image"
+              />
+              {% else %}
+              <img
+                src="{% static 'imgs/books-1281581.jpg' %}"
+                alt="No cover available"
+              />
+              {% endif %}
+              <h2>{{ book.name }}</h2>
+            </div>
           </a>
-        {% endfor %}
-          
-      </div>
-  
-    </section>  
+          {% endfor %}
+        </div>
+      </section>
 
-      
       <section id="categories-section">
         <div id="categories-title">
           <h1>Notre Catalogue</h1>
@@ -72,7 +86,7 @@
               class="category-button"
               ><button>{{ category.name }}</button>
             </a>
-            
+
             {% endfor %}
           </div>
         </div>
