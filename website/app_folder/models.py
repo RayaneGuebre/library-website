@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 import isbnlib 
+import os
 
 
 # Create your models here.
@@ -23,7 +24,7 @@ class Book(models.Model):
     is_available = models.BooleanField(default=True)
     isbn= models.CharField(max_length=255, unique=True)
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
-    cover = models.ImageField(upload_to='covers/', max_length=255, blank=True)
+    cover = models.ImageField(upload_to='covers/', max_length=255, blank=True, null=True)
     def __str__(self):
         return self.name                                        
 class FeaturedBooks(models.Model):

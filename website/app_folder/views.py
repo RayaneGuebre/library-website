@@ -63,3 +63,13 @@ def homepage_view(request):
     featured_books = FeaturedBooks.objects.order_by('order')[:3]  # Adjust this to show only 3 books
     context = {'featured_books': featured_books}
     return render(request, 'homepage.html', context)
+
+
+
+def active_search(input):
+    books = Book.objects.all()
+    return_list = []
+    for book in books:
+        if input in book.name:
+            return_list.append(book.isbn)
+    return return_list
