@@ -100,60 +100,11 @@ body {
   grid-template-columns: 300px 300px 300px 300px;
   grid-template-rows: 80px 80px 80px 80px;
 }
-#category-grid button {
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  height: 100%;
-  color: white;
-  background-color: var(--green);
-  font-weight: 400;
-  border: none;
-  border-radius: 10px;
-  font-size: 50px;
-  grid-template-columns: repeat(auto-fit, 200px, 1fr);
-}
+
 #categories-section {
   height: 100%;
-  background-color: #fbfcf8;
 }
 
-.navbar {
-  display: flex;
-  grid-template-columns: auto 1fr; /* Two columns: auto for left side, 1fr (flexible) for right side */
-  grid-template-rows: 80px;
-  align-items: center;
-  padding: 0 0px;
-  background-color: #fbfcf8;
-  height: 100px;
-}
-
-.nav-right {
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  padding-right: 50px;
-}
-
-.nav-left {
-  padding-left: 50px;
-  align-items: center;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  float: left;
-  text-align: center;
-  width: 50%;
-}
-
-.nav-title {
-  padding-top: 10px;
-  font-size: 25px;
-  color: black;
-  font-weight: 500;
-  font-family: "Montserrat", sans-serif;
-  padding-left: 20px;
-}
 
 .logo {
   padding-left: 20px;
@@ -400,4 +351,5 @@ body {
   font-size: 20px;
   color: #073929;
   font-weight: 500;
+
 }

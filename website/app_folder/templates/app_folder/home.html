@@ -25,6 +25,99 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+        <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      #category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  justify-content: center; /* Centra i pulsanti */
+}
+
+/* Stile per i pulsanti delle categorie */
+#category-grid .btn {
+  font-size: 2rem; /* Testo più grande */
+  padding: 0.75rem 1.5rem; /* Pulsanti più grandi */
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
   </head>
   <body>
     <header>
@@ -85,39 +178,40 @@
   </div>
       </nav>
 
-      <div id="welcome-text-container">
-        <div id="welcome-text">
-          <h1>Bienvenu</h1>
-        </div>
-      </div>
+      
     </header>
 
     <main>
-      <section id="popular-books-section">
-        <div class="popular-books-text">
-          <h1>Livres Populaires</h1>
-        </div>
-        <div class="featured-books-container">
-          {% for book in specific_books %}
-          <a href="{% url 'book_detail' book.category.name book.slug %}">
-            <div class="book-card">
-              {% if book.cover %}
-              <img
-                src="{{ book.cover.url }}"
-                alt="{{ book.name }} cover image"
-              />
-              {% else %}
-              <img
-                src="{% static 'imgs/books-1281581.jpg' %}"
-                alt="No cover available"
-              />
-              {% endif %}
-              <h2>{{ book.name }}</h2>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="{% static 'images/hero.png' %}"
+              class="d-block mx-lg-auto img-fluid"
+              alt="dic logo"
+              width="500"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              Responsive left-aligned hero with image
+            </h1>
+            <p class="lead">
+              Quickly design and customize responsive mobile-first sites with
+              Bootstrap, the world’s most popular front-end open source toolkit,
+              featuring Sass variables and mixins, responsive grid system,
+              extensive prebuilt components, and powerful JavaScript plugins.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+                Primary
+              </button>
             </div>
-          </a>
-          {% endfor %}
+          </div>
         </div>
-      </section>
+
 
       <section id="categories-section">
         <div id="categories-title">
@@ -127,9 +221,10 @@
           <div id="category-grid">
             {% for category in categories %}
             <a
+            class="btn btn-primary btn-lg"
+            type="button"
               href="{% url 'books_in_category' category.name %}"
-              class="category-button"
-              ><button>{{ category.name }}</button>
+              >{{ category.name }}
             </a>
 
             {% endfor %}
